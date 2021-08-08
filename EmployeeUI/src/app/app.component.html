@@ -1,0 +1,11 @@
+<!-- Toolbar -->
+<div class="toolbar" role="banner" style="padding-left: 20px;padding-right: 20px;">
+    <span>Sample Employee Management</span>
+    <a [routerLink]='["/"]' [routerLinkActive]="'active-link'" style="padding-left: 60px;color: #FFF;;">Dashboard</a>
+    <a [routerLink]='["/employee"]' [routerLinkActive]="'active-link'" style="padding-left: 20px;color: #FFF;;">Employees</a>
+    <a [routerLink]='["/add-employee"]' [routerLinkActive]="'active-link'" style="padding-left: 20px;color: #FFF;">Add Employees</a>
+    <div class="spacer"></div>
+    <a style="cursor: pointer;" [title]="welcomeText" (click)="logout()">{{welcomeText}}</a>
+</div>
+
+<router-outlet></router-outlet>

@@ -1,0 +1,49 @@
+<div class="content">
+    <div style="width: 100%;" *ngIf="isLoaded">
+        <form [formGroup]="editEmployeeForm" (ngSubmit)="onSubmit()">
+            <div>
+                <h3 style="text-align:left;">
+                    Edit Employee
+                </h3>
+            </div>
+            <div class="row">
+                <div class="col-md-12" style="margin: 0 auto;">
+                    <div class="form-group">
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                            <input [type]="'text'" name="name" placeholder="Employee Name" class="form-control" formControlName="name" maxlength="128" [ngClass]="{ 'is-invalid': submitted && f.name.errors }" />
+
+                        </div>
+                        <div class="input-group " style="height:20px; ">
+                            <span *ngIf="submitted && f.name.errors" class="error ">Name is required.</span>
+                        </div>
+
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                            <input [type]="'number'" name="salary" placeholder="Employee Salary" class="form-control" formControlName="salary" [ngClass]="{ 'is-invalid': submitted && f.salary.errors }" />
+
+                        </div>
+                        <div class="input-group " style="height:20px; ">
+                            <span *ngIf="submitted && f.name.errors" class="error ">Salary is required.</span>
+                        </div>
+
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                            <input [type]="'text'" name="manager" placeholder="Manager Name" class="form-control" formControlName="managerName" maxlength="128" [ngClass]="{ 'is-invalid': submitted && f.managerName.errors }" />
+
+                        </div>
+                        <div class="input-group " style="height:20px; ">
+                            <span *ngIf="submitted && f.managerName.errors" class="error ">Manager Name is required.</span>
+                        </div>
+
+                        <div class="input-group">
+                            <input type="submit" value="Submit" class="btn btn-default btn-blue" />
+                        </div>
+
+                        <br> {{message}}
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>\
+</div>

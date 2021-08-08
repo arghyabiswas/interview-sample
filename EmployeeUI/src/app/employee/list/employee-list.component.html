@@ -1,0 +1,24 @@
+<div class="content">
+    <div style="width: 100%;" *ngIf="isLoaded">
+
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <td>Name</td>
+                    <td style="text-align: right;">Salary</td>
+                    <td>Manager Name</td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let item of employees">
+                    <td>
+                        <a [routerLink]='["/employee/",item.id]'>{{item.name}}</a>
+                    </td>
+                    <td style="text-align: right;">{{item.salary}}</td>
+                    <td>{{item.managerName}}</td>
+                </tr>
+            </tbody>
+        </table>
+
+    </div>
+</div>
